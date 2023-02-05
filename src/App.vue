@@ -17,6 +17,7 @@ let options = ref([]);
 let btnLoading = ref(false);
 let selectLoading = ref(false);
 let value = ref(null);
+let pathname = ref(location.pathname);
 
 // 加载配置页面的内容
 async function focus() {
@@ -167,8 +168,12 @@ async function getXlsx(title) {
           <!-- 本地测试（开始） -->
           <n-p>当前为本地测试</n-p>
           <!-- 本地测试（结束） -->
-          <n-p>最后编译时间：Feb 6, 2023 1:27 AM</n-p>
+          <n-p>最后编译时间：Feb 6, 2023 1:31 AM</n-p>
           <n-space justify="end">
+            <n-a v-if="pathname === encodeURI('/wiki/Project:导出数据表格（测试版）')"
+              href="//xyy.huijiwiki.com/wiki/Project:导出数据表格">返回稳定版</n-a>
+            <n-a v-if="pathname === encodeURI('/wiki/Project:导出数据表格')"
+              href="//xyy.huijiwiki.com/wiki/Project:导出数据表格（测试版）">进入测试版</n-a>
             <n-a href="//xyy.huijiwiki.com/wiki/Data:导出数据表格.json" target="_blank">配置页面</n-a>
             <n-a href="//www.huijiwiki.com/wiki/帮助:灰机Wiki数据更新器" target="_blank">灰机Wiki数据更新器</n-a>
             <n-a href="//github.com/XYY-huijiwiki/XYY-huijiwiki-components" target="_blank">Github</n-a>
