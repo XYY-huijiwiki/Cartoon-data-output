@@ -91,7 +91,7 @@ async function focus() {
     $message.error(`未知错误`);
     console.log(err);
   }).done((msg) => {
-    let text = msg.query.pages[188].revisions[0]['*'];
+    let text = msg.query.pages[46592].revisions[0]['*'];
     options.value = (JSON.parse(text))['list'];
     selectLoading.value = false;
   });
@@ -143,23 +143,23 @@ async function getXlsx(title) {
 
   <n-config-provider :theme="darkTheme">
     <n-card title="导出数据表格">
-
-      <n-p>在此处选择动画系列即可导出剧集数据表格，方便对内容进行批量修改。修改后的表格需要使用“灰机Wiki数据更新器”上传，才能更新羊羊百科的数据。</n-p>
-
-      <n-input-group>
-        <n-select v-model:value="value" :options="options" :loading="selectLoading" @focus="focus" filterable>
-          <template #empty>
-            <n-empty description="正在加载">
-              <template #icon>
-                <n-icon>
-                  <material-symbol :size="32">hourglass_empty</material-symbol>
-                </n-icon>
-              </template>
-            </n-empty>
-          </template>
-        </n-select>
-        <n-button @click="getXlsx(value)" :loading="btnLoading">导出</n-button>
-      </n-input-group>
+      <n-space vertical>
+        <n-text>在此处选择动画系列即可导出剧集数据表格，方便对内容进行批量修改。修改后的表格需要使用“灰机Wiki数据更新器”上传，才能更新羊羊百科的数据。</n-text>
+        <n-input-group>
+          <n-select v-model:value="value" :options="options" :loading="selectLoading" @focus="focus" filterable>
+            <template #empty>
+              <n-empty description="正在加载">
+                <template #icon>
+                  <n-icon>
+                    <material-symbol :size="32">hourglass_empty</material-symbol>
+                  </n-icon>
+                </template>
+              </n-empty>
+            </template>
+          </n-select>
+          <n-button @click="getXlsx(value)" :loading="btnLoading">导出</n-button>
+        </n-input-group>
+      </n-space>
 
       <!-- 底部footer -->
       <template #action>
@@ -167,11 +167,11 @@ async function getXlsx(title) {
           <!-- 本地测试（开始） -->
           <n-p>当前为本地测试</n-p>
           <!-- 本地测试（结束） -->
-          <n-p>最后编译时间：Feb 6, 2023 1:09 AM</n-p>
+          <n-p>最后编译时间：Feb 6, 2023 1:27 AM</n-p>
           <n-space justify="end">
-            <n-a href="//github.com/XYY-huijiwiki/XYY-huijiwiki-components" target="_blank">Github</n-a>
             <n-a href="//xyy.huijiwiki.com/wiki/Data:导出数据表格.json" target="_blank">配置页面</n-a>
             <n-a href="//www.huijiwiki.com/wiki/帮助:灰机Wiki数据更新器" target="_blank">灰机Wiki数据更新器</n-a>
+            <n-a href="//github.com/XYY-huijiwiki/XYY-huijiwiki-components" target="_blank">Github</n-a>
           </n-space>
         </n-space>
       </template>
