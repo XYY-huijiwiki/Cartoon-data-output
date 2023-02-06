@@ -145,7 +145,7 @@ async function getXlsx(title) {
   <n-config-provider :theme="darkTheme">
     <n-card title="导出数据表格">
       <n-space vertical>
-        <n-text>在此处选择动画系列即可导出剧集数据表格，方便对内容进行批量修改。修改后的表格需要使用“灰机Wiki数据更新器”上传，才能更新羊羊百科的数据。</n-text>
+        <n-text>在此处选择动画系列即可导出剧集数据表格，方便对内容进行批量修改。修改后的表格需要使用<n-a href="//www.huijiwiki.com/wiki/帮助:灰机Wiki数据更新器" target="_blank">灰机Wiki数据更新器</n-a>上传，才能更新羊羊百科的数据。</n-text>
         <n-input-group>
           <n-select v-model:value="value" :options="options" :loading="selectLoading" @focus="focus" filterable>
             <template #empty>
@@ -164,21 +164,7 @@ async function getXlsx(title) {
 
       <!-- 底部footer -->
       <template #action>
-        <n-space justify="space-between">
-          <!-- 本地测试（开始） -->
-          <n-p>当前为本地测试</n-p>
-          <!-- 本地测试（结束） -->
-          <n-p>最后编译时间：Feb 6, 2023 1:31 AM</n-p>
-          <n-space justify="end">
-            <n-a v-if="pathname === encodeURI('/wiki/Project:导出数据表格（测试版）')"
-              href="//xyy.huijiwiki.com/wiki/Project:导出数据表格">返回稳定版</n-a>
-            <n-a v-if="pathname === encodeURI('/wiki/Project:导出数据表格')"
-              href="//xyy.huijiwiki.com/wiki/Project:导出数据表格（测试版）">进入测试版</n-a>
-            <n-a href="//xyy.huijiwiki.com/wiki/Data:导出数据表格.json" target="_blank">配置页面</n-a>
-            <n-a href="//www.huijiwiki.com/wiki/帮助:灰机Wiki数据更新器" target="_blank">灰机Wiki数据更新器</n-a>
-            <n-a href="//github.com/XYY-huijiwiki/XYY-huijiwiki-components" target="_blank">Github</n-a>
-          </n-space>
-        </n-space>
+        <uni-footer></uni-footer>
       </template>
 
     </n-card>
